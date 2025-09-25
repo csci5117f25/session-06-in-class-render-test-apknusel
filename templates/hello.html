@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,19 @@
 
     <title>Hi!</title>
 </head>
+
 <body>
-    
-<h1>Hello from Render</h1>
-{% if name %}
-<h2>and hello to {{name}}</h2>
-{% endif %}
+    <h1>Guestbook</h1>
+    <form method="post">
+        <label for="guest">Add Name: </label><br>
+        <input type="text" id="guest" name="guest"><br>
+        <input type="submit" value="Add">
+    </form>
+    <ul>
+        {% for row in rows %}
+        <li> {{ row.guest }} </li>
+        {% endfor %}
+    </ul>
 </body>
+
 </html>
