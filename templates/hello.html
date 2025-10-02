@@ -11,6 +11,13 @@
 </head>
 
 <body>
+    {% if session %}
+    <h1>Welcome {{ session }}!</h1>
+    <p><a href="/logout">Logout</a></p>
+    {% else %}
+    <h1>Welcome Guest</h1>
+    <p><a href="/login">Login</a></p>
+    {% endif %}
     <h1>Guestbook</h1>
     <form method="post">
         <label for="guest">Add Name: </label><br>
