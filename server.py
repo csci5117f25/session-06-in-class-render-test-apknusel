@@ -98,10 +98,7 @@ def hello():
     with get_db_cursor() as cur:
         cur.execute("SELECT guest FROM guests")
         rows = cur.fetchall()
-    pretty = None
-    if "userinfo" in session:
-        pretty = json.dumps(session["userinfo"], indent=2)
-    return render_template('hello.html', rows=rows, pretty=pretty)
+    return render_template('hello.html', rows=rows)
 
 with app.app_context():
     setup()
